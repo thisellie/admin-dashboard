@@ -1,0 +1,246 @@
+$base-color: #38bdf8;
+$gray-color: #ececec;
+$light-color: #ffffff;
+$shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.4);
+
+html,
+body,
+.container {
+  height: 100%;
+  body {
+    background-color: $gray-color;
+    margin: 0;
+  }
+}
+
+.sidebar,
+.header {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 0.6fr 1.4fr 1fr;
+  grid-template-rows: 0.5fr 1.5fr 1fr;
+  grid-auto-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "sidebar header header"
+    "sidebar content content"
+    "sidebar content content";
+}
+
+.sidebar {
+  grid-area: sidebar;
+  gap: 10px;
+  background-color: $base-color;
+  color: $light-color;
+
+  div {
+    padding: 10px 0 10px 0;
+    margin: 0 20px 0 20px;
+    font-size: larger;
+    font-weight: bold;
+  }
+
+  #dashboard {
+    margin-top: 25px;
+  }
+}
+
+header {
+  grid-area: header;
+  background-color: $light-color;
+  box-shadow: $shadow;
+  .upper-header {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 35px 0 35px;
+
+    img {
+      height: 25px;
+    }
+
+    .left-upper-header,
+    .right-upper-header {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .left-upper-header {
+      width: 70%;
+
+      #searchbar {
+        border-radius: 25px;
+        background-color: $gray-color;
+        height: 25px;
+        width: 100%;
+      }
+    }
+
+    .right-upper-header {
+      #upper-profile {
+        border-radius: 25px;
+      }
+      p {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .lower-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 35px 0 35px;
+
+    h2, p {
+      margin: 0;
+    }
+    #left-lower-header {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    #lower-profile {
+      height: 75px;
+      border-radius: 50px;
+      margin: 15px 0 15px 0;
+    } 
+    #profile-name {
+      height: 70%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+    }
+    #lower-buttons {
+      display: flex;
+      gap: 20px;
+      button {
+        padding: 7px 25px 7px 25px;
+        border-radius: 20px;
+        background-color: $base-color;
+        color: $light-color;
+        font-size: medium;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.content {
+  display: grid;
+  grid-template: 0.1fr 1fr 1fr 1fr 0.2fr 0.4fr 1fr 1fr / repeat(2, 1fr) 0.7fr;
+  gap: 30px 25px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "project-header . announcement-header"
+    "first second announcements"
+    "first second announcements"
+    "third fourth announcements"
+    "third fourth trending-header"
+    "third fourth trending"
+    "fifth sixth trending"
+    "fifth sixth trending";
+  grid-area: content;
+  padding: 20px;
+
+  h2 {
+    margin: 0;
+  }
+  
+  #project-header {
+    grid-area: project-header;
+  }
+
+  #announcement-header {
+    grid-area: announcement-header;
+  }
+
+  #trending-header {
+    grid-area: trending-header;
+  }
+
+  .cards {
+    background-color: $light-color;
+    border-radius: 10px;
+    box-shadow: $shadow;
+    article {
+      margin-top: 25px;
+      padding: 0 20px 0 20px;
+    }
+  }
+
+  .projects {
+    border-left: 7px solid $base-color ;
+  }
+  
+  .first {
+    grid-area: first;
+  }
+
+  .second {
+    grid-area: second;
+  }
+
+  .third {
+    grid-area: third;
+  }
+
+  .fourth {
+    grid-area: fourth;
+  }
+
+  .fifth {
+    grid-area: fifth;
+  }
+
+  .sixth {
+    grid-area: sixth;
+  }
+
+  .announcements {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    grid-area: announcements;
+    div {
+      padding: 0 25px 0 25px;
+      h3 {
+        margin: 0;
+        font-size: medium;
+      }
+      p {
+        margin: 0;
+        font-size: small;
+      }
+    }
+  }
+
+  .trending {
+    grid-area: trending;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-left: 25px;
+    .items {
+      display: flex;
+      gap: 20px;
+      img {
+        height: 50px;
+        border-radius: 50px;
+      }
+      .title {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        h4, p {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
