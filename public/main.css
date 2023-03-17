@@ -1,0 +1,240 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
+* {
+  font-family: "Nunito Sans", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, button {
+  font-weight: 700;
+  margin: 0;
+}
+
+p {
+  font-weight: 300;
+  margin: 0;
+}
+
+body {
+  background-color: #ececec;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 0.6fr 1.4fr 1fr;
+  grid-template-rows: 0.5fr 1.5fr 1fr;
+  grid-auto-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: "sidebar header header" "sidebar content content" "sidebar content content";
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  grid-area: header;
+  background-color: #ffffff;
+}
+header .upper-header {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 35px;
+  padding: 10px 0;
+}
+header .upper-header img {
+  height: 25px;
+}
+header .upper-header .left-upper-header,
+header .upper-header .right-upper-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+header .upper-header .left-upper-header {
+  width: 70%;
+}
+header .upper-header .left-upper-header #searchbar {
+  border-radius: 25px;
+  background-color: #ececec;
+  height: 25px;
+  width: 100%;
+}
+header .upper-header .right-upper-header #upper-profile {
+  border-radius: 25px;
+}
+header .lower-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 35px;
+}
+header .lower-header h2, header .lower-header p {
+  margin: 0;
+}
+header .lower-header #left-lower-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+header .lower-header #lower-profile {
+  height: 75px;
+  border-radius: 50px;
+  margin: 15px 0;
+}
+header .lower-header #profile-name {
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+header .lower-header #lower-buttons {
+  display: flex;
+  gap: 20px;
+}
+header .lower-header #lower-buttons button {
+  padding: 7px 25px;
+  border-radius: 20px;
+  background-color: #38bdf8;
+  color: #ffffff;
+  font-size: medium;
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  grid-area: sidebar;
+  background-color: #38bdf8;
+}
+nav div {
+  display: flex;
+  align-items: center;
+  padding: 0 24px 0 24px;
+  gap: 20px;
+}
+nav div a {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+}
+nav div #dashboard-link {
+  font-size: 24px;
+}
+nav #dashboard {
+  padding: 0 12px 0 12px;
+  margin-top: 12px;
+  gap: 8px;
+}
+nav #home, nav #setting {
+  margin-top: 25px;
+}
+
+main {
+  padding: 20px;
+  display: grid;
+  grid-auto-flow: row;
+  grid-area: content;
+  gap: 30px 25px;
+  grid-template: 0.1fr repeat(3, 1fr) 0.2fr 0.4fr 1fr 1fr/repeat(2, 1fr) 0.7fr;
+  grid-template-areas: "project-header . announcement-header" "first second announcements" "first second announcements" "third fourth announcements" "third fourth trending-header" "third fourth trending" "fifth sixth trending" "fifth sixth trending";
+}
+main h2 {
+  margin: 0;
+}
+main .grid-header {
+  position: relative;
+  top: 15px;
+}
+main #project-header {
+  grid-area: project-header;
+}
+main #announcement-header {
+  grid-area: announcement-header;
+}
+main #trending-header {
+  grid-area: trending-header;
+}
+main .cards {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.4);
+}
+main .cards article {
+  margin-top: 25px;
+  padding: 0 20px;
+}
+main .cards .card-tools {
+  margin: 30px 0 20px;
+  padding-right: 30px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 30px;
+}
+main .projects {
+  border-left: 7px solid #38bdf8;
+}
+main .first {
+  grid-area: first;
+}
+main .second {
+  grid-area: second;
+}
+main .third {
+  grid-area: third;
+}
+main .fourth {
+  grid-area: fourth;
+}
+main .fifth {
+  grid-area: fifth;
+}
+main .sixth {
+  grid-area: sixth;
+}
+main .announcements {
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  grid-area: announcements;
+}
+main .announcements hr {
+  margin: 0 30px;
+  border: 0;
+  height: 1px;
+  background: #ececec;
+  background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+main .announcements div {
+  padding: 0 30px;
+}
+main .announcements div h3 {
+  margin: 0;
+  font-size: medium;
+}
+main .announcements div p {
+  margin: 0;
+  font-size: small;
+}
+main .trending {
+  grid-area: trending;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 0 25px;
+}
+main .trending .items {
+  display: flex;
+  gap: 20px;
+}
+main .trending .items img {
+  height: 50px;
+  border-radius: 50px;
+}
+main .trending .items .title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+main .trending .items .title p {
+  font-size: 14px;
+}
